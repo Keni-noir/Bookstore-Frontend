@@ -4,7 +4,7 @@ export interface Book {
     _id: string
     title: string
     author: string
-    publishedDate: string
+    publishedDate?: string
     description: string
     price: number
     createdAt?: string
@@ -13,7 +13,7 @@ export interface Book {
 export interface BookPayload {
     title: string
     author: string
-    publishedDate: string
+    publishedDate?: string
     description: string
     price: number
     
