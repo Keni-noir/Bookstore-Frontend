@@ -7,7 +7,6 @@ export interface Book {
     publishedDate: string
     description: string
     price: number
-    coverImage?: string
     createdAt?: string
 }
 
