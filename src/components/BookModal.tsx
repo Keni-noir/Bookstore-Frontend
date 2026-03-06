@@ -7,7 +7,7 @@ interface BookModalProps {
     initial?: Book | null
 }
 
-const empty: BookPayload = { title: '', author: '', description: '', price: 0, genre: '', coverImage: '' }
+const empty: BookPayload = { title: '', author: '', description: '', price: 0, publishedDate: ''}
 
 const BookModal = ({ onClose, onSubmit, initial }: BookModalProps) => {
     const [form, setForm] = useState<BookPayload>(initial ? {
@@ -15,8 +15,7 @@ const BookModal = ({ onClose, onSubmit, initial }: BookModalProps) => {
         author: initial.author,
         description: initial.description,
         price: initial.price,
-        genre: initial.genre ?? '',
-        coverImage: initial.coverImage ?? '',
+        publishedDate: initial.publishedDate ?? '',
     } : empty)
     const [loading, setLoading] = useState(false)
 
@@ -86,8 +85,7 @@ const BookModal = ({ onClose, onSubmit, initial }: BookModalProps) => {
                     {field('Author', 'author', 'text', 'e.g. Andrew Hunt')}
                     {field('Description', 'description', 'text', 'Brief description of the book...')}
                     {field('Price ($)', 'price', 'number', '0.00')}
-                    {field('Genre', 'genre', 'text', 'e.g. Technology, Fiction...')}
-                    {field('Cover Image URL', 'coverImage', 'url', 'https://...')}
+                    {field('Published Date', 'publishedDate', 'date', 'e.g. 2023-01-01')}
 
                     <div className="flex gap-3 pt-2">
                         <button type="button" onClick={onClose} className="btn-secondary flex-1 py-2.5">
