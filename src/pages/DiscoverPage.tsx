@@ -92,6 +92,7 @@ const DiscoverPage = () => {
                                         author: book.author_name?.[0] || 'Unknown Author',
                                         description: `First published in ${book.first_publish_year || 'unknown'}`,
                                         price: 0,
+                                        publishedDate: book.first_publish_year ? `${book.first_publish_year}-01-01` : '',
                                     }}
                                 />
                             </div>
