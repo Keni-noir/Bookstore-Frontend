@@ -40,7 +40,7 @@ const BookCard = ({ book, onEdit, onDelete, showActions = false }: BookCardProps
             </div>
 
             {/* Genre pill */}
-            {book.genre && (
+            {book.publishedDate && (
                 <span
                     className="self-start text-xs px-2 py-0.5 rounded-full"
                     style={{
@@ -49,7 +49,7 @@ const BookCard = ({ book, onEdit, onDelete, showActions = false }: BookCardProps
                         border: '1px solid rgba(139,92,246,0.25)',
                     }}
                 >
-                    {book.genre}
+                    {book.publishedDate.split('-')[0]}
                 </span>
             )}
 
